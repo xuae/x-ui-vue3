@@ -7,17 +7,17 @@
 ////////////////////////////////////////////////////////////////
 
 module.exports = {
-  beforeEach: browser => browser.init(),
+  'beforeEach': browser => browser.init(),
 
-  "e2e tests using page objects": browser => {
+  'e2e tests using page objects': browser => {
     const homepage = browser.page.homepage();
-    homepage.waitForElementVisible("@appContainer");
+    homepage.waitForElementVisible('@appContainer');
 
     const app = homepage.section.app;
-    app.assert.elementCount("@logo", 1);
-    app.expect.section("@welcome").to.be.visible;
+    app.assert.elementCount('@logo', 1);
+    app.expect.section('@welcome').to.be.visible;
     app.expect
-      .section("@headline")
+      .section('@headline')
       .text.to.match(/^Welcome to Your Vue\.js (.*)App$/);
 
     browser.end();
@@ -28,7 +28,7 @@ module.exports = {
     const welcomeSection = homepage.section.app.section.welcome;
 
     welcomeSection.expect
-      .element("@cliPluginLinks")
-      .text.to.contain("e2e-nightwatch");
-  }
+      .element('@cliPluginLinks')
+      .text.to.contain('e2e-nightwatch');
+  },
 };
