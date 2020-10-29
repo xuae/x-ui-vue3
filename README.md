@@ -1,5 +1,13 @@
 # x-ui-vue3
 
+## TODO
+
+- [] 组件
+- [] 单元测试
+- [] 文档，自动生成，自动部署
+- [] 打包发布到 npm，自动生成 type 文件
+- [] 自动生成 changelog
+
 ## Project setup
 ```
 yarn install
