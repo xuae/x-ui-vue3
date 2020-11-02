@@ -12,9 +12,7 @@
       </a>
       .
     </p>
-    <h3>
-      Installed CLI Plugins
-    </h3>
+    <h3>Installed CLI Plugins</h3>
     <ul>
       <li>
         <a
@@ -104,9 +102,7 @@
         <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
       </li>
     </ul>
-    <h3>
-      Ecosystem
-    </h3>
+    <h3>Ecosystem</h3>
     <ul>
       <li>
         <a href="https://router.vuejs.org" target="_blank" rel="noopener">

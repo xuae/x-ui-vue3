@@ -9,4 +9,4 @@ app.use(router);
 app.mount('#app');
 
 // @ts-ignore
-// window.__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue = app;
+window.__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue = app;

@@ -27,14 +27,9 @@ module.exports = {
 
     'plugin:vue/vue3-essential',
     'plugin:vue/vue3-strongly-recommended',
-    '@vue/prettier',
-
-    'prettier',
-    'prettier/vue',
     'plugin:vue/vue3-recommended',
-    'plugin:prettier/recommended',
-
-    '@vue/typescript',
+    '@vue/prettier',
+    '@vue/prettier/@typescript-eslint',
   ],
   parserOptions: {
     parser: '@typescript-eslint/parser',
@@ -206,13 +201,14 @@ module.exports = {
     'prettier/prettier': [
       'warn',
       {
+        useTabs: false,
         semi: true,
         singleQuote: true,
         quoteProps: 'consistent',
         trailingComma: 'es5',
         bracketSpacing: true,
         jsxBracketSameLine: false,
-        useTabs: false,
+        arrowParens: 'avoid',
         vueIndentScriptAndStyle: false,
         endOfLine: 'lf',
         htmlWhitespaceSensitivity: 'ignore',
