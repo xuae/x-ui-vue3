@@ -66,15 +66,18 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const { stylus, type, small, ripple, round, disabled } = toRefs(props);
+    const { stylus, type, ripple, round, small, block, disabled } = toRefs(
+      props
+    );
     const classes = computed(() => [
       'x-button',
-      stylus ? `x-button__${stylus.value}` : '',
-      type ? `x-button__${type.value}` : '',
+      stylus ? `x-button__${stylus.value}` : undefined,
+      type ? `x-button__${type.value}` : undefined,
       {
-        'x-button__small': small.value,
         'x-button__ripple': ripple.value,
         'x-button__round': round.value,
+        'x-button__small': small.value,
+        'x-button__block': block.value,
         'x-button__disabled': disabled.value,
       },
     ]);

@@ -7,6 +7,8 @@ selenium-debug.log
 chromedriver.log
 geckodriver.log
 
+# 单元测试覆盖率
+/coverage
 
 # local env files
 .env.local
