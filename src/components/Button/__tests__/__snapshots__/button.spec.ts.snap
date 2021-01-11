@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`XButton.vue block 1`] = `
+exports[`Button.vue block 1`] = `
 <button
   class="x-button   x-button__ripple x-button__block"
   type="button"
@@ -9,7 +9,7 @@ exports[`XButton.vue block 1`] = `
 </button>
 `;
 
-exports[`XButton.vue block 2`] = `
+exports[`Button.vue block 2`] = `
 <button
   class="x-button   x-button__ripple"
   type="button"
@@ -18,7 +18,7 @@ exports[`XButton.vue block 2`] = `
 </button>
 `;
 
-exports[`XButton.vue create 1`] = `
+exports[`Button.vue create 1`] = `
 <button
   class="x-button   x-button__ripple"
   type="button"
@@ -27,7 +27,7 @@ exports[`XButton.vue create 1`] = `
 </button>
 `;
 
-exports[`XButton.vue disabled 1`] = `
+exports[`Button.vue disabled 1`] = `
 <button
   class="x-button   x-button__ripple x-button__disabled"
   type="button"
@@ -36,7 +36,7 @@ exports[`XButton.vue disabled 1`] = `
 </button>
 `;
 
-exports[`XButton.vue disabled 2`] = `
+exports[`Button.vue disabled 2`] = `
 <button
   class="x-button   x-button__ripple"
   type="button"
@@ -45,7 +45,7 @@ exports[`XButton.vue disabled 2`] = `
 </button>
 `;
 
-exports[`XButton.vue nativeType 1`] = `
+exports[`Button.vue nativeType 1`] = `
 <button
   class="x-button   x-button__ripple"
   type="button"
@@ -54,7 +54,7 @@ exports[`XButton.vue nativeType 1`] = `
 </button>
 `;
 
-exports[`XButton.vue nativeType 2`] = `
+exports[`Button.vue nativeType 2`] = `
 <button
   class="x-button   x-button__ripple"
   type="submit"
@@ -63,7 +63,7 @@ exports[`XButton.vue nativeType 2`] = `
 </button>
 `;
 
-exports[`XButton.vue nativeType 3`] = `
+exports[`Button.vue nativeType 3`] = `
 <button
   class="x-button   x-button__ripple"
   type="reset"
@@ -72,7 +72,7 @@ exports[`XButton.vue nativeType 3`] = `
 </button>
 `;
 
-exports[`XButton.vue ripple 1`] = `
+exports[`Button.vue ripple 1`] = `
 <button
   class="x-button   x-button__ripple"
   type="button"
@@ -81,7 +81,7 @@ exports[`XButton.vue ripple 1`] = `
 </button>
 `;
 
-exports[`XButton.vue ripple 2`] = `
+exports[`Button.vue ripple 2`] = `
 <button
   class="x-button"
   type="button"
@@ -90,7 +90,7 @@ exports[`XButton.vue ripple 2`] = `
 </button>
 `;
 
-exports[`XButton.vue round 1`] = `
+exports[`Button.vue round 1`] = `
 <button
   class="x-button   x-button__ripple x-button__round"
   type="button"
@@ -99,7 +99,7 @@ exports[`XButton.vue round 1`] = `
 </button>
 `;
 
-exports[`XButton.vue round 2`] = `
+exports[`Button.vue round 2`] = `
 <button
   class="x-button   x-button__ripple"
   type="button"
@@ -108,7 +108,7 @@ exports[`XButton.vue round 2`] = `
 </button>
 `;
 
-exports[`XButton.vue small 1`] = `
+exports[`Button.vue small 1`] = `
 <button
   class="x-button   x-button__ripple x-button__small"
   type="button"
@@ -117,7 +117,7 @@ exports[`XButton.vue small 1`] = `
 </button>
 `;
 
-exports[`XButton.vue small 2`] = `
+exports[`Button.vue small 2`] = `
 <button
   class="x-button   x-button__ripple"
   type="button"
@@ -126,7 +126,7 @@ exports[`XButton.vue small 2`] = `
 </button>
 `;
 
-exports[`XButton.vue stylus 1`] = `
+exports[`Button.vue stylus 1`] = `
 <button
   class="x-button x-button__text  x-button__ripple"
   type="button"
@@ -135,7 +135,7 @@ exports[`XButton.vue stylus 1`] = `
 </button>
 `;
 
-exports[`XButton.vue stylus 2`] = `
+exports[`Button.vue stylus 2`] = `
 <button
   class="x-button x-button__icon  x-button__ripple"
   type="button"
@@ -144,7 +144,7 @@ exports[`XButton.vue stylus 2`] = `
 </button>
 `;
 
-exports[`XButton.vue stylus 3`] = `
+exports[`Button.vue stylus 3`] = `
 <button
   class="x-button x-button__outlined  x-button__ripple"
   type="button"
@@ -153,7 +153,7 @@ exports[`XButton.vue stylus 3`] = `
 </button>
 `;
 
-exports[`XButton.vue stylus 4`] = `
+exports[`Button.vue stylus 4`] = `
 <button
   class="x-button x-button__contained  x-button__ripple"
   type="button"
@@ -162,7 +162,7 @@ exports[`XButton.vue stylus 4`] = `
 </button>
 `;
 
-exports[`XButton.vue stylus 5`] = `
+exports[`Button.vue stylus 5`] = `
 <button
   class="x-button x-button__toggle  x-button__ripple"
   type="button"
@@ -171,7 +171,7 @@ exports[`XButton.vue stylus 5`] = `
 </button>
 `;
 
-exports[`XButton.vue type 1`] = `
+exports[`Button.vue type 1`] = `
 <button
   class="x-button  x-button__flat x-button__ripple"
   type="button"
@@ -180,7 +180,7 @@ exports[`XButton.vue type 1`] = `
 </button>
 `;
 
-exports[`XButton.vue type 2`] = `
+exports[`Button.vue type 2`] = `
 <button
   class="x-button  x-button__fab x-button__ripple"
   type="button"

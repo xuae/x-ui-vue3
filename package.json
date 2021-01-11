@@ -1,13 +1,38 @@
 {
-  "name": "x-ui-vue3",
+  "name": "x-ui",
+  "description": "基于谷歌 Material Design 设计规范的 Vue 3.x UI 组件库 ",
   "version": "0.1.0",
-  "private": true,
+  "author": {
+    "name": "xuae",
+    "url": "https://github.com/xuae"
+  },
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:lib": "node build/bin/build-entry.js & vue-cli-service build --target lib --dest lib --name x-ui ./src/components/index.js",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
+  },
+  "main": "lib/x-ui.umd.min.js",
+  "keywords": [
+    "vue3",
+    "components",
+    "x-ui"
+  ],
+  "homepage": "https://github.com/xuae/x-ui-vue3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xuae/x-ui-vue3.git"
+  },
+  "files": [
+    "lib",
+    "src/components"
+  ],
+  "bugs": {
+    "url": "https://github.com/xuae/x-ui-vue3/issues"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -37,6 +62,7 @@
     "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
     "eslint-plugin-vue": "^7.0.0-0",
     "geckodriver": "^1.20.0",
+    "json-templater": "^1.2.0",
     "prettier": "^2.1.2",
     "sass": "^1.26.5",
     "sass-loader": "^10.0.4",
