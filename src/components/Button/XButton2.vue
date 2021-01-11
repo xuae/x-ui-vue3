@@ -87,5 +87,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import 'XButton';
+@import 'Button';
 </style>

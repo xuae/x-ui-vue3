@@ -1,9 +1,9 @@
 import { shallowMount } from '@vue/test-utils';
-import XButton from '@/components/Button/XButton.vue';
+import Button from '@/components/Button/Button.vue';
 
-describe('XButton.vue', () => {
+describe('Button.vue', () => {
   it('create', () => {
-    const wrapper = shallowMount(XButton);
+    const wrapper = shallowMount(Button);
     expect(wrapper.element).toMatchSnapshot();
     expect(wrapper.classes('x-button')).toBe(true);
   });
@@ -11,7 +11,7 @@ describe('XButton.vue', () => {
   it('nativeType', async () => {
     const data = ['button', 'submit', 'reset'];
     for (let i = 0; i < data.length; i++) {
-      const wrapper = shallowMount(XButton as any, {
+      const wrapper = shallowMount(Button as any, {
         props: {
           nativeType: data[i],
         },
@@ -24,7 +24,7 @@ describe('XButton.vue', () => {
   it('stylus', async () => {
     const data = ['text', 'icon', 'outlined', 'contained', 'toggle'];
     for (let i = 0; i < data.length; i++) {
-      const wrapper = shallowMount(XButton as any, {
+      const wrapper = shallowMount(Button as any, {
         props: {
           stylus: data[i],
         },
@@ -37,7 +37,7 @@ describe('XButton.vue', () => {
   it('type', () => {
     const data = ['flat', 'fab'];
     for (let i = 0; i < data.length; i++) {
-      const wrapper = shallowMount(XButton as any, {
+      const wrapper = shallowMount(Button as any, {
         props: {
           type: data[i],
         },
@@ -50,7 +50,7 @@ describe('XButton.vue', () => {
   it('ripple', () => {
     const data = [true, false];
     for (let i = 0; i < data.length; i++) {
-      const wrapper = shallowMount(XButton as any, {
+      const wrapper = shallowMount(Button as any, {
         props: {
           ripple: data[i],
         },
@@ -63,7 +63,7 @@ describe('XButton.vue', () => {
   it('round', () => {
     const data = [true, false];
     for (let i = 0; i < data.length; i++) {
-      const wrapper = shallowMount(XButton as any, {
+      const wrapper = shallowMount(Button as any, {
         props: {
           round: data[i],
         },
@@ -76,7 +76,7 @@ describe('XButton.vue', () => {
   it('small', () => {
     const data = [true, false];
     for (let i = 0; i < data.length; i++) {
-      const wrapper = shallowMount(XButton as any, {
+      const wrapper = shallowMount(Button as any, {
         props: {
           small: data[i],
         },
@@ -89,7 +89,7 @@ describe('XButton.vue', () => {
   it('block', async () => {
     const data = [true, false];
     for (let i = 0; i < data.length; i++) {
-      const wrapper = shallowMount(XButton as any, {
+      const wrapper = shallowMount(Button as any, {
         props: {
           block: data[i],
         },
@@ -102,7 +102,7 @@ describe('XButton.vue', () => {
   it('disabled', () => {
     const data = [true, false];
     for (let i = 0; i < data.length; i++) {
-      const wrapper = shallowMount(XButton as any, {
+      const wrapper = shallowMount(Button as any, {
         props: {
           disabled: data[i],
         },
