@@ -1,18 +1,4 @@
-/* 字体变量 */
-
-@font-face {
-  font-family: 'Roboto';
-  src: url('~@/assets/fonts/Roboto-Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roboto Medium';
-  src: url('~@/assets/fonts/Roboto-Medium.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
+// 字体变量
 
 $font-size: 16px !default;
 $font-family: Roboto, Noto, sans-serif;

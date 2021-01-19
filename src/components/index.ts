@@ -3,6 +3,9 @@
  * 由 './build/bin/build-entry.js' 文件自动生成
  */
 
+// 引入全局基础样式
+import '../assets/scss/base.scss';
+
 // 导入组件（用于注册所有组件）
 import Button from './button';
 

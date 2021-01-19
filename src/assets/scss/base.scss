@@ -1,6 +1,20 @@
 @import "utils";
 @import "reset";
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('~@/assets/fonts/Roboto-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Medium';
+  src: url('~@/assets/fonts/Roboto-Medium.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   font-family: $font-family;
   box-sizing: border-box;

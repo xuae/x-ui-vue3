@@ -58,15 +58,12 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-</style>
 ```
 
 ## 入口文件 `index.ts`
 ```typescript
 // 配置对外引用
-import '../../assets/scss/components/button.scss';
+import '../../assets/scss/components/xxx.scss';
 import Xxx from './src/Xxx.vue';
 
 // 提供 install 方法
