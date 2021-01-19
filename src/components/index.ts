@@ -4,31 +4,32 @@
  */
 
 // 导入组件（用于注册所有组件）
-import Button from './Button/index.js';
+import Button from './button';
 
 // 定义组件列表
 const components = [
   Button,
 ];
 
-const install = function (Vue) {
+const install = function (Vue: any) {
   // 判断是否安装过
   // if (install.installed) {
   //   return;
   // }
 
   // 注册所有组件
+  // @ts-ignore
   components.forEach(component => {
     Vue.component(component.name, component);
   });
 };
 
-/* istanbul ignore if */
+// @ts-ignore
 if (typeof window !== 'undefined' && window.Vue) {
+  // @ts-ignore
   install(window.Vue);
 }
 
-// 默认导出
 export default {
   version: '0.1.0',
   // 导出的对象必须具有 install 方法，才能被 Vue.use() 方法安装

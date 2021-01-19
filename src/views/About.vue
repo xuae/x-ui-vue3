@@ -19,10 +19,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import XButton from '@/components/Button/Button.vue';
 
 export default defineComponent({
   name: 'About',
-  components: { XButton },
 });
 </script>

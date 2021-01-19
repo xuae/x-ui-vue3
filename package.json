@@ -11,7 +11,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:lib": "node build/bin/build-entry.js & vue-cli-service build --target lib --dest lib --name x-ui ./src/components/index.js",
+    "build:file": "node build/bin/build-entry.js",
+    "build:lib": "npm run build:file & vue-cli-service build --target lib --dest lib --name x-ui ./src/components/index.ts",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
@@ -67,6 +68,7 @@
     "sass": "^1.26.5",
     "sass-loader": "^10.0.4",
     "typescript": "~4.0.5",
+    "uppercamelcase": "^3.0.0",
     "vue-jest": "^5.0.0-0",
     "webpack": "^4.36.0"
   }

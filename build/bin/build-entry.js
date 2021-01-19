@@ -4,15 +4,16 @@ const fs = require('fs');
 const path = require('path');
 const endOfLine = require('os').EOL;
 const render = require('json-templater/string');
+const upperCamelcase = require('uppercamelcase');
 // 检测是否是文件
 const isFile = path => fs.lstatSync(path).isFile();
 
 // 组件包的路径
 const PATH_PACKAGE = path.join(__dirname, '../../src/components/');
 // 输出的入口文件路径，根据此文件生成 npm 包
-const PATH_OUTPUT = path.join(PATH_PACKAGE, 'index.js');
+const PATH_OUTPUT = path.join(PATH_PACKAGE, 'index.ts');
 // 组件文件夹下的入口文件名
-const ENTRY_FILE = 'index.js';
+const ENTRY_FILE = 'index.ts';
 
 // 组件文件夹及其入口文件路径
 const components = fs
@@ -33,7 +34,8 @@ const components = fs
   })
   .map(name => {
     return {
-      name,
+      name: upperCamelcase(name),
+      folder: `./${name}`,
       entry: `./${name}/${ENTRY_FILE}`,
     };
   });
@@ -41,7 +43,7 @@ const components = fs
 const importList = components.map(item =>
   render(`import {{name}} from '{{entry}}';`, {
     name: item.name,
-    entry: item.entry,
+    entry: item.folder,
   })
 );
 const installList = components.map(item =>
@@ -68,24 +70,25 @@ const components = [
 {{installList}},
 ];
 
-const install = function (Vue) {
+const install = function (Vue: any) {
   // 判断是否安装过
   // if (install.installed) {
   //   return;
   // }
 
   // 注册所有组件
+  // @ts-ignore
   components.forEach(component => {
     Vue.component(component.name, component);
   });
 };
 
-/* istanbul ignore if */
+// @ts-ignore
 if (typeof window !== 'undefined' && window.Vue) {
+  // @ts-ignore
   install(window.Vue);
 }
 
-// 默认导出
 export default {
   version: '{{version}}',
   // 导出的对象必须具有 install 方法，才能被 Vue.use() 方法安装

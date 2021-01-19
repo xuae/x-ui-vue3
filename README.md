@@ -17,35 +17,40 @@
 - 打包测试: `npm pack`
 - 测试安装: `npm install [打包后的 tgz 文件路径]`
 
-## Project setup
+## 项目命令
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
+yarn             // 安装依赖项
+yarn serve       // 启动开发项目
+yarn build       // 构建项目
+yarn build:file  // 构建入口文件
+yarn build:lib   // 构建 npm 包
+yarn test:unit   // 单元测试
+yarn test:e2e    // 端对端测试
+yarn lint        // 格式化代码
 ```
 
-### Run your unit tests
-```
-yarn test:unit
-```
+## src 目录结构
 
-### Run your end-to-end tests
 ```
-yarn test:e2e
+│
+├─assets                     #静态资源
+│  ├─fonts                   #字体
+│  │  └─xxx                  #
+│  │
+│  └─scss                    #样式
+│     └─xxx                  #
+│
+├─components                 #组件包
+│  └─xxx                     #xxx组件
+│     ├─__tests__            #单元测试
+│     │
+│     ├─src                  #组件源码
+│     │
+│     └─index.ts             #组件入口文件
+│
+└─views                      #组件文档页面
+   ├─components              #页面内需要用到的组件
+   │
+   ├─Home.vue                #
+   └─                        #
 ```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
