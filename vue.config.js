@@ -4,6 +4,7 @@ const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
 module.exports = {
   lintOnSave: false,
+  publicPath: './', // 部署应用包时的基本 URL 为相对路径
   runtimeCompiler: true, // 运行时编译
   css: {
     sourceMap: !IS_PRODUCTION,
