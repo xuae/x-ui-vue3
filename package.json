@@ -10,7 +10,7 @@
   "private": false,
   "scripts": {
     "serve": "npm run build:file & vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "npm run build:file & vue-cli-service build",
     "build:file": "node build/bin/build-entry.js",
     "build:lib": "npm run build:file & vue-cli-service build --target lib --dest lib --name x-ui ./src/components/index.ts",
     "test:unit": "vue-cli-service test:unit",
