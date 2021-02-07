@@ -1,26 +1,64 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
-import Home from '../views/Home.vue';
+import { defineAsyncComponent } from 'vue';
+
+const LoadingComponent = {
+  template: `<div v-loading="true" style="min-height: 500px; width: 100%;"></div>`,
+};
+const ErrorComponent = {
+  template: `
+    <div style="text-align: center;padding: 100px 0;">Loading error. Please refresh the page and try again</div>`,
+};
+const getAsyncComponent = (func: any) => {
+  return defineAsyncComponent({
+    loader: func,
+    delay: 0,
+    timeout: 30000,
+    // errorComponent: ErrorComponent,
+    // loadingComponent: LoadingComponent,
+  });
+};
+const components: Array<any> = require('@/components/index.json');
+const componentRoutes = Object.values(components).map(item => {
+  return {
+    path: item.name,
+    name: item.name,
+    component: getAsyncComponent(
+      () => import(`../components/${item.name}/index.md`)
+    ),
+    meta: { title: item.title },
+  };
+});
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
+    redirect: { path: '/components' },
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    path: '/components',
+    name: 'Components',
+    component: () => import('@/views/components/Layout.vue'),
+    children: componentRoutes,
   },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+      };
+    }
+  },
+});
+
+router.beforeEach((to, from) => {
+  const title = to.meta?.title;
+  if (title) {
+    document.title = `${title} | x-ui`;
+  }
 });
 
 export default router;

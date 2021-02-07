@@ -14,6 +14,7 @@ const PATH_PACKAGE = path.join(__dirname, '../../src/components/');
 const PATH_OUTPUT = path.join(PATH_PACKAGE, 'index.ts');
 // 组件文件夹下的入口文件名
 const ENTRY_FILE = 'index.ts';
+const DOC_FILE = 'index.md';
 
 // 组件文件夹及其入口文件路径
 const components = fs
@@ -26,34 +27,53 @@ const components = fs
       }
       const entryPath = path.join(folderPath, ENTRY_FILE);
       fs.accessSync(entryPath, fs.constants.R_OK | fs.constants.W_OK);
+      const docPath = path.join(folderPath, DOC_FILE);
+      fs.accessSync(docPath, fs.constants.R_OK | fs.constants.W_OK);
       return true;
     } catch (err) {
-      console.log(`${name} 文件夹下没有可访问的 ${ENTRY_FILE} 入口文件`);
+      console.log(
+        `${name} 文件夹下没有可访问的 "${ENTRY_FILE}" 入口文件，或者没有 "${DOC_FILE}" 说明文件`
+      );
       return false;
     }
   })
   .map(name => {
+    let title = name;
+    const folderPath = path.join(PATH_PACKAGE, name);
+    const docPath = path.join(folderPath, DOC_FILE);
+    try {
+      const doc = fs.readFileSync(docPath, { encoding: 'utf-8' }).trim();
+      // 获取 markdown 文件第一行
+      const [firstLine] = doc.split('\n');
+      // 选择二级标题后的文字作为文档标题
+      const arr = firstLine.split(/^#\s/);
+      // 若没有标题，则使用默认值
+      title = arr[1] || title;
+    } catch (err) {
+      console.warn('[读取组件文档出错]：', err);
+    }
     return {
-      name: upperCamelcase(name),
-      folder: `./${name}`,
-      entry: `./${name}/${ENTRY_FILE}`,
+      name: name,
+      componentName: upperCamelcase(name),
+      title: title,
+      entry: `./${name}`,
     };
   });
 
 const importList = components.map(item =>
-  render(`import {{name}} from '{{entry}}';`, {
-    name: item.name,
-    entry: item.folder,
+  render(`import {{componentName}} from '{{entry}}';`, {
+    componentName: item.componentName,
+    entry: item.entry,
   })
 );
 const installList = components.map(item =>
-  render(`  {{name}}`, {
-    name: item.name,
+  render(`  {{componentName}}`, {
+    componentName: item.componentName,
   })
 );
 const exportList = components.map(item =>
-  render(`  {{name}}`, {
-    name: item.name,
+  render(`  {{componentName}}`, {
+    componentName: item.componentName,
   })
 );
 
@@ -96,8 +116,6 @@ export default {
   version: '{{version}}',
   // 导出的对象必须具有 install 方法，才能被 Vue.use() 方法安装
   install,
-  // 具体的组件列表
-{{exportList}},
 };
 
 // 具名导出
@@ -114,11 +132,14 @@ const template = render(TEMPLATE, {
 });
 
 fs.writeFileSync(PATH_OUTPUT, template);
-console.log('[build entry] DONE:', PATH_OUTPUT);
+console.log('[build entry] DONE:', PATH_OUTPUT, '\n');
 
-const jsonList = components.map(item =>
-  render(`  "{{name}}": "{{entry}}"`, item)
-);
+const TEMPLATE_JSON_ITEM = `  "{{name}}": {
+    "name": "{{name}}",
+    "title": "{{title}}",
+    "componentName": "{{componentName}}"
+  }`;
+const jsonList = components.map(item => render(TEMPLATE_JSON_ITEM, item));
 const TEMPLATE_JSON = `{
 {{list}}
 }
@@ -126,4 +147,6 @@ const TEMPLATE_JSON = `{
 const jsonTemp = render(TEMPLATE_JSON, {
   list: jsonList.join(`,${endOfLine}`),
 });
-fs.writeFileSync(path.join(PATH_PACKAGE, 'index.json'), jsonTemp);
+const PATH_JSON = path.join(PATH_PACKAGE, 'index.json');
+fs.writeFileSync(PATH_JSON, jsonTemp);
+console.log('[build json] DONE:', PATH_JSON, '\n');

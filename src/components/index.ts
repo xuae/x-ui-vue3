@@ -37,8 +37,6 @@ export default {
   version: '0.1.0',
   // 导出的对象必须具有 install 方法，才能被 Vue.use() 方法安装
   install,
-  // 具体的组件列表
-  Button,
 };
 
 // 具名导出
