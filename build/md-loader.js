@@ -198,7 +198,7 @@ module.exports = function (source) {
             } else {
               const next = anchors[i + 1] || a;
               const nextTop = next.offsetTop;
-              if(aTop >= scrollTop || (aTop < scrollTop && nextTop - 300 > scrollTop)) {
+              if(i === anchors.length -1 || aTop >= scrollTop || (aTop < scrollTop && nextTop - 300 > scrollTop)) {
                 hasActive = true;
                 !directory.classList.contains('active') && directory.classList.add('active');
               } else {
