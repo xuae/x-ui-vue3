@@ -8,10 +8,12 @@ import '../assets/scss/base.scss';
 
 // 导入组件（用于注册所有组件）
 import Button from './button';
+import Icon from './icon';
 
 // 定义组件列表
 const components = [
   Button,
+  Icon,
 ];
 
 const install = function (Vue: any) {
@@ -42,4 +44,5 @@ export default {
 // 具名导出
 export {
   Button,
+  Icon,
 }

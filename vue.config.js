@@ -27,5 +27,12 @@ module.exports = {
       .use('markdown-loader')
       .loader(path.resolve(__dirname, './build/md-loader.js'))
       .end();
+
+    config.module
+      .rule('codepoints')
+      .test(/\.codepoints$/)
+      .use('raw-loader')
+      .loader('raw-loader')
+      .end();
   },
 };

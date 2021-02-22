@@ -14,7 +14,7 @@ const PATH_PACKAGE = path.join(__dirname, '../../src/components/');
 const PATH_OUTPUT = path.join(PATH_PACKAGE, 'index.ts');
 // 组件文件夹下的入口文件名
 const ENTRY_FILE = 'index.ts';
-const DOC_FILE = 'index.md';
+const DOC_FILE = 'README.md';
 
 // 组件文件夹及其入口文件路径
 const components = fs

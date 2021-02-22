@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon.vue bind click 1`] = `<i class="x-icon" style="cursor: pointer;">name</i>`;
+
+exports[`Icon.vue create 1`] = `<i class="x-icon">name</i>`;
+
+exports[`Icon.vue prop color 1`] = `<i class="x-icon" style="color: red;">name</i>`;
+
+exports[`Icon.vue prop size 1`] = `<i class="x-icon" style="font-size: 36px;">name</i>`;

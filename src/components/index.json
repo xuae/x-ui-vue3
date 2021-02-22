@@ -3,5 +3,10 @@
     "name": "button",
     "title": "Button 按钮",
     "componentName": "Button"
+  },
+  "icon": {
+    "name": "icon",
+    "title": "Icon 图标",
+    "componentName": "Icon"
   }
 }

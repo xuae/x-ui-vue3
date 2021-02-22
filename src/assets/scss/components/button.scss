@@ -32,6 +32,40 @@ $button-icon-size-mini: 24px !default;
     @include depth(4);
   }
 
+  &__primary, &__secondary, &__info, &__success, &__warning, &__error {
+    color: $color-text-alternate;
+  }
+
+  // 主要按钮
+  &__primary {
+    background: $color-primary;
+  }
+
+  // 次要按钮
+  &__secondary {
+    background: $color-secondary;
+  }
+
+  // 信息按钮
+  &__info {
+    background: $color-info;
+  }
+
+  // 成功按钮
+  &__success {
+    background: $color-success;
+  }
+
+  // 警告按钮
+  &__warning {
+    background: $color-warning;
+  }
+
+  // 危险按钮
+  &__error {
+    background: $color-error;
+  }
+
   // 小按钮
   &__small {
     min-width: $button-small-min-width;

@@ -6,6 +6,15 @@ import store from '@/store';
 import XUI from '@/components';
 
 const app = createApp(App);
+
+// 根据文件内容获取全部图标，并绑定在 app 上
+const icons = require('@/assets/fonts/material-icons/icons.json');
+const allIcons = require('@/assets/fonts/material-icons/MaterialIcons-Regular.codepoints')
+  .default.split('\n')
+  .map((val: string) => val.split(' ')[0]);
+icons.all = allIcons;
+app.config.globalProperties.$icon = icons;
+
 app.component(DemoBlock.name, DemoBlock);
 app.use(XUI);
 app.use(store);

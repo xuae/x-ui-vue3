@@ -12,6 +12,7 @@ export default defineComponent({
 <style lang="scss">
 .demo-doc {
   max-width: 1200px;
+  padding-right: 220px;
   margin: auto;
 
   h1,
@@ -50,16 +51,38 @@ export default defineComponent({
 
   p {
     font-size: 14px;
-    color: #5e6d82;
+    color: $color-text-primary;
     line-height: 1.5em;
     margin: 14px 0;
+  }
+
+  ul:not(.timeline) {
+    margin: 10px 0;
+    padding: 0 0 0 20px;
+    font-size: 14px;
+    color: #5e6d82;
+    line-height: 2em;
+  }
+
+  code:not([class*='language-']) {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    background: map-get($color-grey, 200);
+    color: $color-text-primary;
+    border: 1px solid map-get($color-grey, 300);
+    margin: 0 4px;
+    display: inline-block;
+    padding: 0 4px;
+    font-size: 0.9em;
+    border-radius: 2px;
+    line-height: 22px;
+    height: 22px;
   }
 
   .tip,
   .warning,
   .error,
   .success {
-    background-color: #f3f5f7;
+    background-color: map-get($color-grey, 100);
     padding: 0.1rem 1.5rem;
     border-left-width: 0.5rem;
     border-left-style: solid;
@@ -69,18 +92,46 @@ export default defineComponent({
       background-color: rgba(255, 255, 255, 0.7);
       color: #445368;
     }
+
+    em {
+      font-style: normal;
+      color: map-get($color-red, 900);
+    }
+
+    & > p {
+      &:first-of-type {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
   }
   .tip {
-    border-color: $color-info;
+    border-color: map-get($color-blue, 700);
+    //background-color: map-get($color-blue, 100);
+    p:first-of-type {
+      color: map-get($color-blue, 900);
+    }
   }
   .warning {
-    border-color: $color-warning;
+    border-color: map-get($color-amber, 700);
+    //background-color: map-get($color-amber, 100);
+    p:first-of-type {
+      color: map-get($color-amber, 900);
+    }
   }
   .error {
-    border-color: $color-error;
+    border-color: map-get($color-red, 700);
+    //background-color: map-get($color-red, 100);
+    p:first-of-type {
+      color: map-get($color-red, 900);
+    }
   }
   .success {
-    border-color: $color-success;
+    border-color: map-get($color-green, 700);
+    //background-color: map-get($color-green, 100);
+    p:first-of-type {
+      color: map-get($color-green, 900);
+    }
   }
 
   table {
@@ -93,6 +144,11 @@ export default defineComponent({
 
     strong {
       font-weight: normal;
+    }
+
+    em {
+      font-style: normal;
+      color: map-get($color-red, 900);
     }
 
     td,
@@ -119,45 +175,72 @@ export default defineComponent({
     }
   }
 
-  ul:not(.timeline) {
-    margin: 10px 0;
-    padding: 0 0 0 20px;
-    font-size: 14px;
-    color: #5e6d82;
-    line-height: 2em;
-  }
-}
+  // 右侧目录
+  .table-of-contents {
+    @include depth(4);
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 2;
+    background: white;
+    border: solid 1px $color-border;
+    max-height: 600px;
+    overflow: auto;
+    width: 200px;
 
-.table-of-contents {
-  @include depth(4);
-  position: fixed;
-  top: 100px;
-  right: 20px;
-  z-index: 2;
-  background: white;
-  border: solid 1px $color-border;
-  max-height: 600px;
-  overflow: auto;
-  width: 200px;
+    a {
+      text-decoration: none;
+      color: $color-text-secondary;
 
-  a {
-    text-decoration: none;
-    color: $color-text-secondary;
+      &:hover,
+      &.active {
+        color: $color-text-primary;
+      }
+    }
 
-    &:hover,
-    &.active {
-      color: $color-text-primary;
+    & > ul {
+      padding: 12px;
+      margin: 0;
+      list-style: none;
+
+      & > li > ul {
+        //padding: 0 !important;
+        list-style: none;
+      }
     }
   }
 
-  & > ul {
-    padding: 12px;
-    margin: 0;
+  // 图标列表
+  .icon-list {
+    overflow: hidden;
     list-style: none;
+    padding: 0 !important;
 
-    & > li > ul {
-      //padding: 0 !important;
-      list-style: none;
+    li {
+      float: left;
+      width: 98px;
+      height: 120px;
+      padding: 15px 8px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 4px;
+      color: map-get($color-grey, 800);
+      &:hover {
+        background: map-get($color-grey, 200);
+      }
+
+      .x-icon {
+        font-size: 36px;
+        color: map-get($color-grey, 800);
+      }
+
+      .icon-caption {
+        display: block;
+        font-size: 12px;
+        margin-top: 8px;
+        word-break: break-all;
+        line-height: 1.3;
+      }
     }
   }
 }

@@ -12,7 +12,7 @@
 │  ├─src                     #组件源码
 │  │  └─Xxx.vue              #组件 Xxx，文件名采用 PascalCase 的命名方式
 │  │
-│  ├─index.md                #组件文档，必须有此文件才能被打包
+│  ├─README.md                #组件文档，必须有此文件才能被打包
 │  └─index.ts                #组件入口文件，必须有此文件才能被打包
 │
 ├─index.json                 #组件名和组件入口文件的对应 json 字符串，由 build-entry.js 自动生成
@@ -22,7 +22,7 @@
 
 ## 文件代码规范
 1. 一个文件夹代表一个组件，文件夹采用 kebab-case 的命名方式
-1. 每个文件夹下必须有 `index.ts` 和 `index.md` 文件，才能被打包构建
+1. 每个文件夹下必须有 `index.ts` 和 `README.md` 文件，才能被打包构建
 1. 单元测试需写在 `__test__` 文件夹下
 1. vue 文件需写在 `src` 文件夹下，且文件名采用 PascalCase 的命名方式
 
@@ -77,7 +77,7 @@ Xxx.install = function (Vue: any) {
 export default Xxx;
 ```
 
-## 文档文件 `index.md`
+## 文档文件 `README.md`
 ```markdown
 # 文档标题，作为跳转至组件文档的链接文字，只能有一个一级标题
 

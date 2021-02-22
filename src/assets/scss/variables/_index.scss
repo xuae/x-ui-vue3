@@ -4,9 +4,9 @@
 
 // 基础色调
 $color-primary: $color-blue-primary !default; // 主色
-$color-secondary: map-get($color-pink, 200) !default;
+$color-secondary: map-get($color-pink, A200) !default;
 $color-success: $color-green-primary !default;
-$color-warning: map-get($color-yellow, 200) !default;
+$color-warning: map-get($color-yellow, 600) !default;
 $color-error: $color-red-primary !default;
 $color-info: $color-blue-primary !default;
 $color-track: map-get($color-grey, 400) !default;

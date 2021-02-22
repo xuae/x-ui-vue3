@@ -1,190 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button.vue block 1`] = `
-<button
-  class="x-button   x-button__ripple x-button__block"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue create 1`] = `<button type="button" class="x-button x-button__ripple"></button>`;
 
-exports[`Button.vue block 2`] = `
-<button
-  class="x-button   x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop block 1`] = `<button type="button" class="x-button x-button__block x-button__ripple"></button>`;
 
-exports[`Button.vue create 1`] = `
-<button
-  class="x-button   x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop block 2`] = `<button type="button" class="x-button x-button__ripple"></button>`;
 
-exports[`Button.vue disabled 1`] = `
-<button
-  class="x-button   x-button__ripple x-button__disabled"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop disabled 1`] = `<button type="button" class="x-button x-button__disabled x-button__ripple"></button>`;
 
-exports[`Button.vue disabled 2`] = `
-<button
-  class="x-button   x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop disabled 2`] = `<button type="button" class="x-button x-button__ripple"></button>`;
 
-exports[`Button.vue nativeType 1`] = `
-<button
-  class="x-button   x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop nativeType 1`] = `<button type="button" class="x-button x-button__ripple"></button>`;
 
-exports[`Button.vue nativeType 2`] = `
-<button
-  class="x-button   x-button__ripple"
-  type="submit"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop nativeType 2`] = `<button type="submit" class="x-button x-button__ripple"></button>`;
 
-exports[`Button.vue nativeType 3`] = `
-<button
-  class="x-button   x-button__ripple"
-  type="reset"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop nativeType 3`] = `<button type="reset" class="x-button x-button__ripple"></button>`;
 
-exports[`Button.vue ripple 1`] = `
-<button
-  class="x-button   x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop ripple 1`] = `<button type="button" class="x-button x-button__ripple"></button>`;
 
-exports[`Button.vue ripple 2`] = `
-<button
-  class="x-button"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop ripple 2`] = `<button type="button" class="x-button"></button>`;
 
-exports[`Button.vue round 1`] = `
-<button
-  class="x-button   x-button__ripple x-button__round"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop round 1`] = `<button type="button" class="x-button x-button__ripple x-button__round"></button>`;
 
-exports[`Button.vue round 2`] = `
-<button
-  class="x-button   x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop round 2`] = `<button type="button" class="x-button x-button__ripple"></button>`;
 
-exports[`Button.vue small 1`] = `
-<button
-  class="x-button   x-button__ripple x-button__small"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop small 1`] = `<button type="button" class="x-button x-button__ripple x-button__small"></button>`;
 
-exports[`Button.vue small 2`] = `
-<button
-  class="x-button   x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop small 2`] = `<button type="button" class="x-button x-button__ripple"></button>`;
 
-exports[`Button.vue stylus 1`] = `
-<button
-  class="x-button x-button__text  x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop stylus 1`] = `<button type="button" class="x-button x-button__text x-button__ripple"></button>`;
 
-exports[`Button.vue stylus 2`] = `
-<button
-  class="x-button x-button__icon  x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop stylus 2`] = `<button type="button" class="x-button x-button__icon x-button__ripple"></button>`;
 
-exports[`Button.vue stylus 3`] = `
-<button
-  class="x-button x-button__outlined  x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop stylus 3`] = `<button type="button" class="x-button x-button__outlined x-button__ripple"></button>`;
 
-exports[`Button.vue stylus 4`] = `
-<button
-  class="x-button x-button__contained  x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop stylus 4`] = `<button type="button" class="x-button x-button__contained x-button__ripple"></button>`;
 
-exports[`Button.vue stylus 5`] = `
-<button
-  class="x-button x-button__toggle  x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop stylus 5`] = `<button type="button" class="x-button x-button__toggle x-button__ripple"></button>`;
 
-exports[`Button.vue type 1`] = `
-<button
-  class="x-button  x-button__flat x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop type 1`] = `<button type="button" class="x-button x-button__flat x-button__ripple"></button>`;
 
-exports[`Button.vue type 2`] = `
-<button
-  class="x-button  x-button__fab x-button__ripple"
-  type="button"
->
-  Button
-</button>
-`;
+exports[`Button.vue prop type 2`] = `<button type="button" class="x-button x-button__fab x-button__ripple"></button>`;
+
+exports[`Button.vue slot default 1`] = `<button type="button" class="x-button x-button__ripple">按钮</button>`;

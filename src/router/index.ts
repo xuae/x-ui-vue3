@@ -23,7 +23,7 @@ const componentRoutes = Object.values(components).map(item => {
     path: item.name,
     name: item.name,
     component: getAsyncComponent(
-      () => import(`../components/${item.name}/index.md`)
+      () => import(`../components/${item.name}/README.md`)
     ),
     meta: { title: item.title },
   };
