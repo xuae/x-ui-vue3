@@ -7,33 +7,33 @@
   font-weight: 400;
 }
 
-//@font-face {
-//  font-family: 'Material Icons Outlined';
-//  src: url("~@/assets/fonts/material-icons/MaterialIconsOutlined-Regular.otf");
-//  font-style: normal;
-//  font-weight: 400;
-//}
-//
-//@font-face {
-//  font-family: "Material Icons Round";
-//  src: url("~@/assets/fonts/material-icons/MaterialIconsRound-Regular.otf");
-//  font-style: normal;
-//  font-weight: 400;
-//}
-//
-//@font-face {
-//  font-family: "Material Icons Sharp";
-//  src: url("~@/assets/fonts/material-icons/MaterialIconsSharp-Regular.otf");
-//  font-style: normal;
-//  font-weight: 400;
-//}
-//
-//@font-face {
-//  font-family: "Material Icons TwoTone";
-//  src: url("~@/assets/fonts/material-icons/MaterialIconsTwoTone-Regular.otf");
-//  font-style: normal;
-//  font-weight: 400;
-//}
+@font-face {
+  font-family: 'Material Icons Outlined';
+  src: url("~@/assets/fonts/material-icons/MaterialIconsOutlined-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Material Icons Round";
+  src: url("~@/assets/fonts/material-icons/MaterialIconsRound-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Material Icons Sharp";
+  src: url("~@/assets/fonts/material-icons/MaterialIconsSharp-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Material Icons TwoTone";
+  src: url("~@/assets/fonts/material-icons/MaterialIconsTwoTone-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
+}
 
 .x-icon {
   font-family: "Material Icons";
@@ -44,19 +44,19 @@
   vertical-align: middle;
   line-height: 1;
 
-  //&__outlined {
-  //  font-family: "Material Icons Outlined";
-  //}
-  //
-  //&__round {
-  //  font-family: "Material Icons Round";
-  //}
-  //
-  //&__sharp {
-  //  font-family: "Material Icons Sharp";
-  //}
-  //
-  //&__two-tone {
-  //  font-family: "Material Icons TwoTone";
-  //}
+  &__outlined {
+    font-family: "Material Icons Outlined";
+  }
+
+  &__round {
+    font-family: "Material Icons Round";
+  }
+
+  &__sharp {
+    font-family: "Material Icons Sharp";
+  }
+
+  &__twoTone {
+    font-family: "Material Icons TwoTone";
+  }
 }

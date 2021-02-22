@@ -9,10 +9,17 @@ const app = createApp(App);
 
 // 根据文件内容获取全部图标，并绑定在 app 上
 const icons = require('@/assets/fonts/material-icons/icons.json');
-const allIcons = require('@/assets/fonts/material-icons/MaterialIcons-Regular.codepoints')
-  .default.split('\n')
-  .map((val: string) => val.split(' ')[0]);
-icons.all = allIcons;
+const files = require.context(
+  '@/assets/fonts/material-icons',
+  false,
+  /.codepoints$/
+);
+files.keys().forEach(key => {
+  const fileName = key.replace(/(\.\/|-Regular.codepoints)/g, '');
+  const content = files(key).default;
+  icons[fileName] = content.split('\n').map((val: string) => val.split(' ')[0]);
+});
+console.log(icons);
 app.config.globalProperties.$icon = icons;
 
 app.component(DemoBlock.name, DemoBlock);

@@ -1,9 +1,17 @@
 <template>
-  <i v-bind="$attrs" class="x-icon" :style="styles">{{ name }}</i>
+  <i
+    v-bind="$attrs"
+    class="x-icon"
+    :class="type ? `x-icon__${type}` : ''"
+    :style="styles"
+  >
+    {{ name }}
+  </i>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, toRefs } from 'vue';
+import { computed, defineComponent, Prop, toRefs } from 'vue';
+import VueProp from '@/utils/VueProp';
 
 export default defineComponent({
   name: 'XIcon',
@@ -23,8 +31,14 @@ export default defineComponent({
     color: {
       type: String,
     },
+
+    // 类型
+    type: {
+      type: String,
+      validator: VueProp.oneOf(['outlined', 'round', 'sharp', 'twoTone']),
+    } as Prop<'outlined' | 'round' | 'sharp' | 'twoTone'>,
   },
-  setup(props, { attrs, slots, emit }) {
+  setup(props, { attrs }) {
     const { size, color } = toRefs(props);
     const styles = computed(() => {
       const style: { [key: string]: string } = {};

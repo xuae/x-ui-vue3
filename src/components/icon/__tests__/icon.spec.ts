@@ -47,6 +47,20 @@ describe('Icon.vue', () => {
     expect(wrapper.attributes('style')).toContain('font-size: 48px');
   });
 
+  it('prop type', async () => {
+    const data = ['outlined', 'round', 'sharp', 'twoTone'];
+    for (let i = 0; i < data.length; i++) {
+      const wrapper = mount(Icon as any, {
+        props: {
+          name,
+          type: data[i],
+        },
+      });
+      expect(wrapper.html()).toMatchSnapshot();
+      expect(wrapper.classes(`x-icon__${data[i]}`)).toBe(true);
+    }
+  });
+
   it('bind click', () => {
     const onClick = jest.fn();
     const wrapper = mount(Icon, {

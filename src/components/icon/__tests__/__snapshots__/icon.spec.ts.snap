@@ -7,3 +7,11 @@ exports[`Icon.vue create 1`] = `<i class="x-icon">name</i>`;
 exports[`Icon.vue prop color 1`] = `<i class="x-icon" style="color: red;">name</i>`;
 
 exports[`Icon.vue prop size 1`] = `<i class="x-icon" style="font-size: 36px;">name</i>`;
+
+exports[`Icon.vue prop type 1`] = `<i class="x-icon x-icon__outlined">name</i>`;
+
+exports[`Icon.vue prop type 2`] = `<i class="x-icon x-icon__round">name</i>`;
+
+exports[`Icon.vue prop type 3`] = `<i class="x-icon x-icon__sharp">name</i>`;
+
+exports[`Icon.vue prop type 4`] = `<i class="x-icon x-icon__twoTone">name</i>`;
