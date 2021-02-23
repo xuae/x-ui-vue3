@@ -55,6 +55,7 @@
 :::
 
 使用`type`属性来定义图标的风格。
+- 默认：实底图标
 - `outlined`: 线框图标
 - `round`: 圆角图标
 - `sharp`: 尖角图标
@@ -68,6 +69,12 @@
   <x-icon name="home" size="48" type="round" />
   <x-icon name="home" size="48" type="sharp" />
   <x-icon name="home" size="48" type="twoTone" />
+  <br>
+  <x-icon name="check_box" size="48" />
+  <x-icon name="check_box" size="48" type="outlined" />
+  <x-icon name="check_box" size="48" type="round" />
+  <x-icon name="check_box" size="48" type="sharp" />
+  <x-icon name="check_box" size="48" type="twoTone" />
   <br>
   <x-icon name="account_box" size="48" />
   <x-icon name="account_box" size="48" type="outlined" />
@@ -178,7 +185,7 @@ _*_ 表示必填项
 
 ## 全部
 
-### 默认图标({{$icon.MaterialIcons.length}})
+### 实底风格({{$icon.MaterialIcons.length}})
 
 <ul class="icon-list">
   <li v-for="name in $icon.MaterialIcons" :key="name">
