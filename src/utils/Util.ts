@@ -131,4 +131,39 @@ export default class Util {
     }
     return moment(date).format(format);
   }
+
+  /**
+   * 获取文件后缀
+   *
+   * @param fileName string
+   */
+  static getFileSuffix(fileName: string) {
+    if (this.isNull(fileName)) {
+      return null;
+    }
+    return fileName.split('.').pop()?.toLowerCase() || null;
+  }
+
+  /**
+   * 下载文件
+   *
+   * @param file Blob
+   * @param fileName string
+   */
+  static downloadFile(file: Blob, fileName: string) {
+    try {
+      const blob = new Blob([file]);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = URL.createObjectURL(blob);
+      a.download = fileName;
+      a.click();
+      URL.revokeObjectURL(a.href);
+      a.remove();
+      return true;
+    } catch (e) {
+      // console.error(e);
+      return false;
+    }
+  }
 }
