@@ -26,7 +26,7 @@ module.exports = function (source) {
     highlight: function (str, lang) {
       const html = prism.highlight(str, prism.languages[lang], lang);
       const className = `language-${lang}`;
-      return `<pre class="${className} line-numbers match-braces"><code class="${className}">${html}</code></pre>`;
+      return `<pre v-pre class="${className} line-numbers match-braces"><code class="${className}">${html}</code></pre>`;
     },
   });
   // 根据标题生成标题锚点
@@ -220,6 +220,9 @@ module.exports = function (source) {
       },
     }
     </script>
+    <style lang="scss" scoped>
+    @import "../../assets/scss/doc.scss";
+    </style>
   `;
   /*
     <style lang='scss'>

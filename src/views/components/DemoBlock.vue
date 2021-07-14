@@ -13,8 +13,10 @@
       <slot name="description" />
     </div>
     <!-- 示例代码高亮显示 -->
-    <div class="highlight" :style="{ maxHeight: isExpanded ? '1000px' : 0 }">
-      <slot />
+    <div class="highlight" :style="{ maxHeight: isExpanded ? '400px' : 0 }">
+      <div>
+        <slot />
+      </div>
     </div>
     <!-- 查看 | 隐藏 代码块按钮 -->
     <div
@@ -96,6 +98,18 @@ export default defineComponent({
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.2s;
+
+    & > div {
+      display: flex;
+      width: 100%;
+      max-height: 400px;
+      overflow: auto;
+
+      ::v-deep(.code-toolbar) {
+        flex: 1;
+      }
+    }
+
     ::v-deep(pre) {
       background-color: #282c34;
       margin: 0;
