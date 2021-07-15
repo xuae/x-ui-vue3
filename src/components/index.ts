@@ -3,6 +3,8 @@
  * 由 './build/bin/build-entry.js' 文件自动生成
  */
 
+import { App } from 'vue';
+
 // 引入全局基础样式
 import '../assets/scss/base.scss';
 
@@ -16,24 +18,12 @@ const components = [
   Icon,
 ];
 
-const install = function (Vue: any) {
-  // 判断是否安装过
-  // if (install.installed) {
-  //   return;
-  // }
-
+const install = function (app: App) {
   // 注册所有组件
-  // @ts-ignore
   components.forEach(component => {
-    Vue.component(component.name, component);
+    app.component(component.name, component);
   });
 };
-
-// @ts-ignore
-if (typeof window !== 'undefined' && window.Vue) {
-  // @ts-ignore
-  install(window.Vue);
-}
 
 export default {
   version: '0.1.0',
